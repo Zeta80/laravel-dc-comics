@@ -32,7 +32,7 @@
                             <td>{{ $comic->price }}</td>
                             <td>{{ $comic->sale_date }}</td>
                             <td>
-                                <a href="" class="btn btn-primary">
+                                <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-primary">dettagli
                                 </a>
                             </td>
                         </tr>
