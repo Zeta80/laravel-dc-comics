@@ -13,7 +13,7 @@
         <div class="container mt-4">
             <div class="mb-4">
                 <a href="/" class="btn btn-primary">torna alla home</a>
-                <a href="" class="btn btn-primary">aggiungi fumetto</a>
+                <a href="{{ route('comics.create') }}" class="btn btn-primary">aggiungi fumetto</a>
             </div>
             <table class="table table-striped">
                 <thead>
@@ -34,6 +34,9 @@
                             <td>
                                 <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-primary">dettagli
                                 </a>
+                                <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-secondary">Modify
+                                </a>
+
                             </td>
                         </tr>
                     @endforeach

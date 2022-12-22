@@ -2,7 +2,8 @@
 
 @section('content')
     <section>
-        <div class="container">
+        <div class="container mb-5">
+            <a href="{{ route('comics.index') }}" class="btn btn-primary">torna alla lista</a>
             <h2> {{ $comic->title }}</h2>
             <div class="mt-4">
                 @if (!empty($comic->thumb))
@@ -23,6 +24,15 @@
             </dl>
 
             <p> {{ $comic->description }}</p>
+
+
+            <form action="{{ route('comics.destroy', $comic->id) }}" method="POST" class="d-inline mb-5">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger">
+                    Delete
+                </button>
+            </form>
         </div>
     </section>
 @endsection
